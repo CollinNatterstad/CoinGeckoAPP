@@ -1,4 +1,11 @@
+#code checking library 
 pylint
+
+#Allows for the use of .env secret files. 
 python-dotenv
+
+#will utilize for technical analysis
 pandas-ta
+
+# will update postgrsql
 psycopg2
