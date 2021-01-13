@@ -21,13 +21,15 @@ ids = ["Bitcoin","Polkadot","Ethereum"]
 
 #connects to coingecko through api, returns price for each coin.
 CryptoPrice = cg.get_price(ids= ids, vs_currencies= "usd")
+print(DB_USER)
+print(CryptoPrice)
+#Operations involving local database. 
+conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
 
-#connects to local database. 
-class databaseconnection:
-    
-    conn = pg.connect(database = DB_NAME, user = DB_USER, password = DB_USER_PASS, host = DB_HOST, port = DB_PORT )
-    
-    conn.close()
+conn.close()
+
+
+
     
     
          
