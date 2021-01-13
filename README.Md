@@ -1,21 +1,21 @@
 
-# opens terminal with virtual environment
+# opens terminal
 '''Powershell 
 ctrl+shift+`
 '''
 
-# creates a virtual environment. 
+# creates a virtual environment within python. 
 '''Powershell
 python -m venv venv
 '''
 
-# upgrading pip
+# Upgrading pip
 '''Powershell
 pip install --upgrade pip
 '''
 
 
-# installs any libraries contained within the requirements.txt file
+# Installs any libraries contained within the requirements.txt file
 '''Powershell
 pip install -r requirements.txt
 
