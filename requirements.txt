@@ -4,8 +4,11 @@ pylint
 #Allows for the use of .env secret files. 
 python-dotenv
 
-#will utilize for technical analysis
+#library containing technical analysis tools
 pandas-ta
 
-# will update postgrsql
+#library used to update postgreSQL
 psycopg2
+
+#pycoingecko library that hosts the coingecko public api.
+pycoingecko

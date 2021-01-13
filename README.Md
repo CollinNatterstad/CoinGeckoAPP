@@ -1,16 +1,15 @@
 
 # opens terminal with virtual environment
-
 '''Powershell 
 ctrl+shift+`
 '''
-creates a virtual environment. 
+
+# creates a virtual environment. 
 '''Powershell
 python -m venv venv
 '''
 
 # upgrading pip
-
 '''Powershell
 pip install --upgrade pip
 '''
