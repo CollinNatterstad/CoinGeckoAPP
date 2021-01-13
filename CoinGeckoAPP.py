@@ -14,7 +14,6 @@ DB_USER = os.getenv("DB_USER")
 DB_USER_PASS = os.getenv("DB_USER_PASS")
 DB_PORT = os.getenv ("DB_PORT")
 
-#connecting to coingecko crypto data
 cg = CoinGeckoAPI()
 
 #returns prices for these coins. 
