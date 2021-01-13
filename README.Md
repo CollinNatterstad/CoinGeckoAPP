@@ -1,10 +1,10 @@
 
-# opens terminal
+# Open terminal
 '''Powershell 
 ctrl+shift+`
 '''
 
-# creates a virtual environment within python. 
+# Creates a virtual environment within python. 
 '''Powershell
 python -m venv venv
 '''
@@ -23,3 +23,4 @@ or
 
 python -m pip install -r requirements.txt
 '''
+
