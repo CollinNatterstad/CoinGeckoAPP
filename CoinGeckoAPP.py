@@ -24,10 +24,11 @@ CryptoPrice = cg.get_price(ids= ids, vs_currencies= "usd")
 
 #connects to local database. 
 class databaseconnection:
-    try: 
-        conn = pg.connect(database = DB_NAME, user = DB_USER, password = DB_USER_PASS, host = DB_HOST, port = DB_PORT )
-        print ("Database Connection Successful")
     
-    except:
-        print ("Database Connection Unsuccessful")
+    conn = pg.connect(database = DB_NAME, user = DB_USER, password = DB_USER_PASS, host = DB_HOST, port = DB_PORT )
+    
+    conn.close()
+    
+    
+         
 
