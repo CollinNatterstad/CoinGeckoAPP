@@ -4,9 +4,6 @@ pylint
 #Allows for the use of .env secret files. 
 python-dotenv
 
-#library containing technical analysis tools
-pandas-ta
-
 #library used to update postgreSQL
 psycopg2
 
