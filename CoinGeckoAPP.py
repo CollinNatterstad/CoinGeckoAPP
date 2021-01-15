@@ -20,14 +20,14 @@ def connect_API():
     #shorting CoinGeckoAPI for easy access
     cg = CoinGeckoAPI()
     #list of interested coins. 
-    ids = ["Bitcoin","Polkadot","Ethereum"]
+    cryptolist = ["Bitcoin","Polkadot","Ethereum"]
 
-    #for loop iterates over each coin and brings back pricing data. this data will then be manipulated and pushed to databases.  
-    for ids in ids:
+    #for loop iterates over each coin and brings back pricing data. this data will then be manipulated and pushed to databases.     
+    for coin in cryptolist:
         #connects to coingecko through api, returns price for each coin.
-        CryptoPrice = cg.get_price(ids= ids, vs_currencies= "usd")
+        CryptoPrice = cg.get_price(ids= coin, vs_currencies= "usd")
         print(CryptoPrice)        
-    
+
 
 def update_tables():
     conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
