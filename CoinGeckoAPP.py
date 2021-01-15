@@ -19,20 +19,25 @@ DB_PORT = os.getenv ("DB_PORT")
 def connect_API():
     #shorting CoinGeckoAPI for easy access
     cg = CoinGeckoAPI()
-
-    #returns prices for these coins. 
+    #list of interested coins. 
     ids = ["Bitcoin","Polkadot","Ethereum"]
 
-    #connects to coingecko through api, returns price for each coin.
-    CryptoPrice = cg.get_price(ids= ids, vs_currencies= "usd")
-    print(CryptoPrice)
+    #for loop iterates over each coin and brings back pricing data. this data will then be manipulated and pushed to databases.  
+    for ids in ids:
+        #connects to coingecko through api, returns price for each coin.
+        CryptoPrice = cg.get_price(ids= ids, vs_currencies= "usd")
+        print(CryptoPrice)        
+    
+
+def update_tables():
+    conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
+
+    conn.close()
+
 #Operations involving local database. 
-
 connect_API()
-conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
+update_tables()
 
-
-conn.close()
 
 
 
