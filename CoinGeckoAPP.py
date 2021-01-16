@@ -1,8 +1,7 @@
 
 def main():
     #importing libraries
-    import os
-    import json
+    import os    
     import psycopg2 as pg
     from pycoingecko import CoinGeckoAPI
 
