@@ -13,6 +13,7 @@ python -m venv venv
 
 # Upgrading pip
 '''Powershell.
+
 pip install --upgrade pip
 '''
 
