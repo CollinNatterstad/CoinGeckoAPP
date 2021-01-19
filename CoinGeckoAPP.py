@@ -1,8 +1,7 @@
 
 def main():
     #importing libraries
-    import os
-    import json
+    import os, json
     import psycopg2 as pg
     from psycopg2.extras import json
     from pycoingecko import CoinGeckoAPI
@@ -20,14 +19,18 @@ def main():
     DB_PORT = os.getenv ("DB_PORT")
     
     #function containing api call. 
-    def connect_bitcoin():
+    def connect_API():
         #shorting CoinGeckoAPI for easy access
         cg = CoinGeckoAPI()
-    
+        coins = ['Bitcoin', 'Ethereum','Polkadot']
         #connects to coingecko through api, returns price for each coin.
-        CryptoPrice = cg.get_price(ids= 'bitcoin', vs_currencies= "usd")
+        CryptoPrice = cg.get_price(ids= coins, vs_currencies= "usd")
 
         now = date.today()
+
+        for key,value in CryptoPrice.items():
+            
+
 
         #opens connection to postgres database through psycopg2 
         conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
@@ -44,33 +47,10 @@ def main():
         #closes cursor
         curr.close()
         #closes connection to postgres database
-        conn.close() 
-            
-    def connect_ethereum():
-
-        cg = CoinGeckoAPI()
-        CryptoPrice = cg.get_price(ids= 'ethereum', vs_currencies= "usd")
-        print(CryptoPrice)
-        conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
-
-        conn.close() 
-    def connect_polkadot():
-
-        cg = CoinGeckoAPI()
-        CryptoPrice = cg.get_price(ids= "polkadot", vs_currencies= "usd")
-        print(CryptoPrice)
-        conn = pg.connect(database = DB_NAME, user= DB_USER, password= DB_USER_PASS, host= DB_HOST, port= DB_PORT)
-
-        conn.close() 
-
-
-  
+        conn.close()         
 
     #function calls 
-    connect_bitcoin()
-    connect_ethereum()
-    connect_polkadot()
-    
+    connect_API()  
 
 
 
