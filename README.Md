@@ -31,3 +31,5 @@ python -m pip install -r requirements.txt
 # Purpose of program
 
 This is a basic crypto tool that will take crypto pricing data from coingecko and push that data to a database (in this case a local one).
+
+
